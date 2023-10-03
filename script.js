@@ -1,14 +1,38 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
+// remove/hide password box
+generate.addEventListener("click", clearCard)
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+function clearCard() {
+  const textAreaRemover = document.getElementById("password"); textAreaRemover.remove();
+  var hasCleared = true
+};
 
-  passwordText.value = password;
+// expand central box + show options
 
+if (hasCleared = true) {
+  const formHandler = 
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// store inputs
+
+// collapse box/put the old info back
+
+// print password
+
+
+/* Pseudo-code
+Generate Password button
+  on click
+    open window
+      multiple options
+        length
+          8 - 128
+        character types
+          lower
+          upper
+          numeric
+          special
+      Validate input (at least one character type should be selected)
+    Generate Passwod
+  Write generated password to the page
+
+  */
