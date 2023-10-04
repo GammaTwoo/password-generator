@@ -202,3 +202,11 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+/* The form */
+
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
