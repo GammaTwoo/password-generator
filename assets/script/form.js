@@ -26,14 +26,19 @@ characterRange.addEventListener('input', syncCharacterAmount)
 
 form.addEventListener('submit', e => {
     e.preventDefault()
-    const characterAmount = characterNumber.value
+    const characterAmount = +characterNumber.value
     const includeUppercase = includeUppercaseElement.checked
     const includeNumbers = includeNumbersElement.checked
     const specialCharacters = includeSymbolsElement.checked
-    
-    const password = generatePassword( characterAmount, includeUppercase, includeNumbers, specialCharacters)
-    localStorage.setItem("password", password)
-    window.location.assign("../../index.html");
+    let isNull 
+    if ( characterAmount >= 0 && characterAmount <= 0 ) { isNull = NaN } else { isNull = characterAmount }
+    if (!isNaN(isNull)){
+        const password = generatePassword( characterAmount, includeUppercase, includeNumbers, specialCharacters)
+        localStorage.setItem("password", password)
+        window.location.assign("../../index.html");
+    } else {
+        window.alert('Please choose a number')
+    }
 })
 
 function generatePassword( characterAmount, includeUppercase, includeNumbers, specialCharacters ) {
