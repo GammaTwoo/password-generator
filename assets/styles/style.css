@@ -15,6 +15,8 @@ body,
 body {
   font-family: sans-serif;
   background-color: #f9fbfd;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 
 .wrapper {
@@ -136,11 +138,26 @@ button[disabled] {
   }
 }
 
-/* Styles for JS created objects */
+/***** Styles for the form page *****/
 
+form {
+  display: flex;
+  flex-flow: column wrap;
+}
 
-/* The toggle switches */
-/* Box around slider */
+input {
+  max-height: 1.5em;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/***** To turn the chackboxes into switches *****/
+
+/* The switch - the box around the slider */
 .switch {
   position: relative;
   display: inline-block;
@@ -203,10 +220,45 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-/* The form */
+/***** Styles for the Range *****/
 
-.options {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/* track reset */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 15rem;
+}
+
+/* track styles for chromium/firefox respectively */
+input[type="range"]::-webkit-slider-runnable-track {
+  background: lightgray;
+  height: 0.2rem;
+}
+
+input[type="range"]::-moz-range-track {
+  background: lightgray;
+  height: 0.2rem;
+}
+
+/* thumb reset */
+
+/* thumb styles */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -0.3rem; /* Centers thumb on the track */
+  background-color: #2196F3;
+  height: 0.8rem;
+  width: 0.8rem; 
+  border-radius: 50%;   
+}
+
+/***** Styles for number input *****/
+
+input[type="number"] {
+  margin: 0;
+  font-size: 1em;
+  
 }
